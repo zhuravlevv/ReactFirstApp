@@ -3,5 +3,6 @@
   background: green;
 }
 .header img{
-  width: 30px
+  width: 50px;
+  margin-left: 300px;
 }

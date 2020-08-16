@@ -1,9 +1,11 @@
 import React from 'react';
+import classes from '../style/Header.module.css';
+
 
 const Header = () =>{
     return(
-        <header className='header'>
-            <img src='https://www.iconarchive.com/download/i94983/blackvariant/button-ui-requests-2/Minecraft-2.ico' width='40' height='40'alt='abc'/>
+        <header className={classes.header}>
+            <img src='https://www.iconarchive.com/download/i94983/blackvariant/button-ui-requests-2/Minecraft-2.ico' alt='abc'/>
         </header>
     )
 };

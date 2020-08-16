@@ -2,6 +2,7 @@
   /*display: grid;*/
   grid-area: content;
   background: aquamarine;
+  margin-right: 200px;
 
   /*grid-template-areas:*/
   /*    "content1" "content2";*/

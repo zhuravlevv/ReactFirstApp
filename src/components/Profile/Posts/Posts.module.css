@@ -1,0 +1,26 @@
+.content{
+  /*display: grid;*/
+  grid-area: content;
+  background: aquamarine;
+  margin-right: 300px;
+
+  /*grid-template-areas:*/
+  /*    "content1" "content2";*/
+
+  /*grid-template-rows: 1fr;*/
+  /*grid-template-columns: 800px 1fr;*/
+}
+
+/*.content1{*/
+/*    grid-area: content1;*/
+/*    background: rebeccapurple;*/
+/*}*/
+
+/*.content2{*/
+/*    background: aliceblue;*/
+/*    grid-area: content2;*/
+/*}*/
+
+.item{
+  color: yellow;
+}

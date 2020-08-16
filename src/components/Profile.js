@@ -1,11 +1,30 @@
 import React from 'react';
 
-const Header = () =>{
+const Profile = () =>{
     return(
-        <header className='header'>
-            <img src='https://www.iconarchive.com/download/i94983/blackvariant/button-ui-requests-2/Minecraft-2.ico' width='40' height='40'alt='abc'/>
-        </header>
+        <div className='content'>
+            <div>
+                <img src='https://image.freepik.com/free-photo/image-human-brain_99433-298.jpg' alt='abc'/>
+            </div>
+            <div>
+                ava+description
+            </div>
+            <div>
+                My posts
+                <div>
+                    New post
+                </div>
+                <div>
+                    <div>
+                        post 1
+                    </div>
+                    <div>
+                        post 2
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 };
 
-export default Header
+export default Profile

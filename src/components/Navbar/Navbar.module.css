@@ -4,6 +4,11 @@
   margin-left: 300px;
 }
 
-.item {
+.item a{
   color: white;
 }
+
+.item a.activeLink{
+  color: gold;
+}
+

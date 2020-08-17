@@ -4,6 +4,12 @@
   margin-left: 300px;
 }
 
+.nav .items{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 .item a{
   color: white;
 }

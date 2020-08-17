@@ -2,6 +2,7 @@ import React from "react";
 import classes from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 import Dialog from "./Dialog/Dialog";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
     return (
@@ -13,9 +14,9 @@ const Dialogs = (props) => {
 
             </div>
             <div className={classes.messages}>
-                <div className={classes.message}>Hi</div>
-                <div className={classes.message}>Hi</div>
-                <div className={classes.message}>Hi</div>
+                <Message message='Hi'/>
+                <Message message='Hello'/>
+                <Message message='Greeting'/>
             </div>
         </div>
     );

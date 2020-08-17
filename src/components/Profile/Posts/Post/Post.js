@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Post.module.css";
 
 const Post = (props) => {
+
     return (
         <div className={classes.item}>
             <img src = "https://wallpapershome.ru/images/wallpapers/poligon-1080x1920-4k-hd-3d-fon-241.jpg" alt='abc'/>
@@ -9,7 +10,7 @@ const Post = (props) => {
                 {props.message}
             </div>
             <div>
-                <span>like</span>
+                <span>{props.likesCount} likes</span>
             </div>
         </div>
     );

@@ -10,6 +10,10 @@ const Posts = () => {
         {id: 2, message: 'It\'s my fp', likesCount: 23}
     ];
 
+    function getPosts(postsData){
+        return (postsData.map( (post) => (<Post message={post.message} likesCount={post.likesCount}/>)))
+    }
+
 
     return(
         <div className={classes.postsBlock}>
@@ -21,9 +25,7 @@ const Posts = () => {
                 <button>Add</button>
             </div>
             <div className={classes.posts}>
-                <Post message = 'Hi, how are you?' likesCount='0'/>
-                <Post message = 'It is my first post' likesCount='23'/>
-                <Post/>
+                {getPosts(postsData)}
             </div>
         </div>
     );

@@ -24,6 +24,12 @@ const Dialogs = (props) => {
         })
     }
 
+    function getMessages(messagesData){
+        return messagesData.map( (message) => {
+            return <Message message={message.message} id={message.id}/>
+        })
+    }
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
@@ -34,9 +40,7 @@ const Dialogs = (props) => {
 
             </div>
             <div className={classes.messages}>
-                <Message message='Hi'/>
-                <Message message='Hello'/>
-                <Message message='Greeting'/>
+                {getMessages(messagesData)}
             </div>
         </div>
     );

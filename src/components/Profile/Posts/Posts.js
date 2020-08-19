@@ -3,17 +3,16 @@ import classes from "./Posts.module.css"
 import Post from "./Post/Post";
 
 
-const Posts = () => {
+const Posts = (props) => {
 
-    let postsData = [
+/*    let postsData = [
         {id: 1, message: 'Hi, how are you', likesCount: 0},
         {id: 2, message: 'It\'s my fp', likesCount: 23}
-    ];
+    ];*/
 
     function getPosts(postsData){
         return (postsData.map( (post) => (<Post message={post.message} likesCount={post.likesCount}/>)))
     }
-
 
     return(
         <div className={classes.postsBlock}>
@@ -25,7 +24,7 @@ const Posts = () => {
                 <button>Add</button>
             </div>
             <div className={classes.posts}>
-                {getPosts(postsData)}
+                {getPosts(props.postsData)}
             </div>
         </div>
     );

@@ -20,8 +20,6 @@ const App = (props) => {
               <div className='app-wrapper-content'>
                   <Route exact path='/dialogs' render={getDialogs} />
                   <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
-                  {/*<Profile/>*/}
-                  {/*<Dialogs/>*/}
               </div>
           </div>
       </BrowserRouter>

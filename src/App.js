@@ -12,6 +12,10 @@ const App = (props) => {
       return <Dialogs dialogsData={props.appState.dialogsData} messagesData={props.appState.messagesData}/>
   };
 
+  const getProfile = () => {
+      return <Profile postsData={props.appState.postsData} addPost={props.addPost}/>
+  };
+
   return (
       <BrowserRouter>
           <div className='app-wrapper'>
@@ -19,7 +23,7 @@ const App = (props) => {
               <Navbar/>
               <div className='app-wrapper-content'>
                   <Route exact path='/dialogs' render={getDialogs} />
-                  <Route path='/profile' render={() => <Profile postsData={props.appState.postsData}/>}/>
+                  <Route path='/profile' render={getProfile}/>
               </div>
           </div>
       </BrowserRouter>

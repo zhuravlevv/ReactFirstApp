@@ -9,7 +9,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 const App = (props) => {
 
   const getDialogs = () => {
-      return <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>
+      return <Dialogs dialogsData={props.appState.dialogsData} messagesData={props.appState.messagesData}/>
   };
 
   return (
@@ -19,7 +19,7 @@ const App = (props) => {
               <Navbar/>
               <div className='app-wrapper-content'>
                   <Route exact path='/dialogs' render={getDialogs} />
-                  <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
+                  <Route path='/profile' render={() => <Profile postsData={props.appState.postsData}/>}/>
               </div>
           </div>
       </BrowserRouter>

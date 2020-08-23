@@ -23,9 +23,11 @@ let store = {
     getState(){
         return this._state;
     },
+
     _callSubscriber () {
         console.log('State changed')
     },
+
     addPost (postMessage){
         let newPost = {
             id: 5,
@@ -33,12 +35,12 @@ let store = {
             likesCount: 0
         };
         this._state.postsData.push(newPost);
-        this._callSubscriber(this.state);
+        this._callSubscriber(this._state);
     },
 
     changeNewPostText (newText) {
-        this.state.newPostText = newText;
-        this._callSubscriber(this.state);
+        this._state.newPostText = newText;
+        this._callSubscriber(this._state);
     },
 
     subscribe (observer){

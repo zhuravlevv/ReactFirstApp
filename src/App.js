@@ -13,7 +13,8 @@ const App = (props) => {
   };
 
   const getProfile = () => {
-      return <Profile postsData={props.appState.postsData} addPost={props.addPost}/>
+      return <Profile postsData={props.appState.postsData} addPost={props.addPost} newPostText={props.appState.newPostText}
+                        changeNewPostText={props.changeNewPostText}/>
   };
 
   return (

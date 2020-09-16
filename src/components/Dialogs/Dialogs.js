@@ -3,6 +3,7 @@ import classes from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
+import {sendMessageActionCreator, updateNewMessageBodyActionCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
 
@@ -18,6 +19,17 @@ const Dialogs = (props) => {
         })
     }
 
+    let newMessageBody = props.newMessageBody;
+
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageActionCreator());
+    };
+
+    let onNewMessageChange = (event) => {
+        let body = event.target.value;
+        props.dispatch(updateNewMessageBodyActionCreator(body));
+    };
+
     return (
         <div className={classes.dialogs}>
 
@@ -27,6 +39,12 @@ const Dialogs = (props) => {
 
             <div className={classes.messages}>
                 {getMessages(props.messagesData)}
+                <div>
+                    <div><textarea value={newMessageBody}
+                                   placeholder='Enter your message'
+                                   onChange={onNewMessageChange}/></div>
+                    <div><button onClick={onSendMessageClick}>Send</button></div>
+                </div>
             </div>
 
         </div>

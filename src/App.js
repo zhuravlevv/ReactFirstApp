@@ -9,12 +9,14 @@ import {BrowserRouter, Route} from "react-router-dom";
 const App = (props) => {
 
   const getDialogs = () => {
-      return <Dialogs dialogsData={props.appState.dialogsData} messagesData={props.appState.messagesData}/>
+      return <Dialogs dialogsData={props.state.dialogsData}
+                      messagesData={props.state.messagesData}/>
   };
 
   const getProfile = () => {
-      return <Profile postsData={props.appState.postsData} addPost={props.addPost} newPostText={props.appState.newPostText}
-                        changeNewPostText={props.changeNewPostText}/>
+      return <Profile postsData={props.state.postsData}
+                      dispatch={props.dispatch}
+                      newPostText={props.state.newPostText}/>
   };
 
   return (

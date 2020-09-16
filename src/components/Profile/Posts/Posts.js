@@ -2,6 +2,18 @@ import React from "react";
 import classes from "./Posts.module.css"
 import Post from "./Post/Post";
 
+let addPostActionCreator = () => {
+    return {
+        type: 'ADD-POST'
+    }
+};
+
+let updateNewPostTextActionCreator = (text) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: text
+    }
+};
 
 const Posts = (props) => {
 
@@ -10,16 +22,14 @@ const Posts = (props) => {
     }
 
     const updateTextarea = () => {
-        props.changeNewPostText(newPostElement.current.value);
+        props.dispatch(updateNewPostTextActionCreator(newPostElement.current.value));
     };
 
     const newPostElement = React.createRef();
 
     const addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        props.changeNewPostText('');
 
+        props.dispatch(addPostActionCreator());
     };
 
     return(

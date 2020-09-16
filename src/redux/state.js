@@ -23,28 +23,28 @@ let store = {
     getState(){
         return this._state;
     },
-
     _callSubscriber () {
         console.log('State changed')
     },
-
-    addPost (postMessage){
-        let newPost = {
-            id: 5,
-            message: postMessage,
-            likesCount: 0
-        };
-        this._state.postsData.push(newPost);
-        this._callSubscriber(this._state);
-    },
-
-    changeNewPostText (newText) {
-        this._state.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-
     subscribe (observer){
         this._callSubscriber = observer;
+    },
+
+    dispatch(action){
+        if(action.type === 'ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: this._state.newPostText,
+                likesCount: 0
+            };
+            this._state.postsData.push(newPost);
+            this._state.newPostText = '';
+            this._callSubscriber(this._state);
+        }
+        else if(action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 
 };
